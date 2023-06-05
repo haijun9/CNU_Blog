@@ -63,7 +63,7 @@ const Layout = () => {
         </div>
         <div>
           <Name>전해준</Name>
-          <Description>실전코딩 블로그</Description>
+          <Description>실전코딩때 배운 블로그</Description>
         </div>
       </Profile>
       <Nav>

@@ -60,8 +60,9 @@ const Text = styled.p`
 `;
 
 const Post = () => {
+  const navigate = useNavigate();
   const params = useParams();
-  const { postId } = params;
+  const { postId = '' } = params;
   const [post, setPost] = useState<IPost | undefined>(undefined);
 
   const fetchPostById = async () => {
@@ -69,16 +70,6 @@ const Post = () => {
     const { post } = data;
     setPost(post);
   };
-
-  useEffect(() => {
-    fetchPostById();
-  }, []);
-
-  if (!post) {
-    return <NotFound />;
-  }
-
-  const navigate = useNavigate();
 
   const clickDeleteButton = () => {
     const result = window.confirm('정말로 게시글을 삭제하시겠습니까?');
@@ -91,6 +82,14 @@ const Post = () => {
     await deletePostById(postId ?? '');
     navigate('/');
   };
+
+  useEffect(() => {
+    fetchPostById();
+  }, []);
+
+  if (!post) {
+    return <NotFound />;
+  }
 
   return (
     <div style={{ margin: '5.5rem auto', width: '700px' }}>

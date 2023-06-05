@@ -27,9 +27,11 @@ const PostListItem = (props: IPost) => {
 
   return (
     <ItemLink to={`/post/${id}`}>
-      <h2>{title}</h2>
-      <Contents>{contents}</Contents>
-      <Tag>#{tag}</Tag>
+      <Contents>
+        <h2>{title}</h2>
+        {contents}
+        <Tag>#{tag}</Tag>
+      </Contents>
     </ItemLink>
   );
 };

@@ -123,7 +123,7 @@ const Write = () => {
     await createPost(title, content, tag);
   };
 
-  const requestUpdatePost = async () => {
+  const requestEditPost = async () => {
     await updatePostById(state.postId, title, content, tag);
   };
 
@@ -134,7 +134,7 @@ const Write = () => {
     }
 
     if (isEdit) {
-      requestUpdatePost();
+      requestEditPost();
     } else {
       requestCreatePost();
     }

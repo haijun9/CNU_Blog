@@ -9,14 +9,12 @@ const instance = axios.create({
   baseURL: 'http://34.22.77.64:8080',
 });
 
-// todo (6) api 작성
-
 export const getPostList = (): Promise<AxiosResponse<IResponsePostList>> => {
-  return instance.get(`/post`);
+  return instance.get('/posts');
 };
 
 export const createPost = (title: string, contents: string, tag: TAG) => {
-  return instance.post(`/posts`, {
+  return instance.post('/posts', {
     title,
     contents,
     tag,
