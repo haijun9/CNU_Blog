@@ -12,11 +12,11 @@ const instance = axios.create({
 // todo (6) api 작성
 
 export const getPostList = (): Promise<AxiosResponse<IResponsePostList>> => {
-  return instance.get('/posts');
+  return instance.get(`/post`);
 };
 
 export const createPost = (title: string, contents: string, tag: TAG) => {
-  return instance.post('/posts', {
+  return instance.post(`/posts`, {
     title,
     contents,
     tag,
